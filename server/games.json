@@ -1,0 +1,103 @@
+{
+    "g6a2948568d6599.61583338": {
+        "statut": "en_cours",
+        "joueur0": "6a2948568d672",
+        "board": [
+            [
+                7,
+                0,
+                5,
+                5,
+                5,
+                5,
+                5
+            ],
+            [
+                7,
+                7,
+                7,
+                7,
+                0,
+                5,
+                5
+            ]
+        ],
+        "scores": [
+            0,
+            0
+        ],
+        "joueurActif": 0,
+        "termine": false,
+        "vainqueur": null,
+        "message": "",
+        "dernierCoup": 1781091180,
+        "joueur1": "6a2948568d672"
+    },
+    "g6a294d9cdddaa1.36697853": {
+        "statut": "en_cours",
+        "joueur0": "6a294d9cdddb4",
+        "board": [
+            [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+            ],
+            [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+            ]
+        ],
+        "scores": [
+            0,
+            0
+        ],
+        "joueurActif": 0,
+        "termine": false,
+        "vainqueur": null,
+        "message": "",
+        "dernierCoup": 1781091740,
+        "joueur1": "6a294d9cdddb4"
+    },
+    "g6a2951ed893b62.85256930": {
+        "statut": "attente",
+        "joueur0": "6a2951ed893be",
+        "board": [
+            [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+            ],
+            [
+                5,
+                5,
+                5,
+                5,
+                5,
+                5,
+                5
+            ]
+        ],
+        "scores": [
+            0,
+            0
+        ],
+        "joueurActif": 0,
+        "termine": false,
+        "vainqueur": null,
+        "message": "",
+        "dernierCoup": 1781092845
+    }
+}

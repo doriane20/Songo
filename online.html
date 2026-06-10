@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Songo – En ligne</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a href="index.html" class="btn btn-retour">← Accueil</a>
+
+  <!-- ÉCRAN D'ATTENTE -->
+  <div id="ecran-attente" class="accueil">
+    <h1 style="color:var(--or);font-family:'Cinzel',serif;">SONGO</h1>
+    <p class="sous-titre">Mode en ligne</p>
+    <button class="btn" id="btn-rejoindre" onclick="rejoindreFile()">
+      🌍 Chercher une partie
+    </button>
+    <p id="msg-attente" style="margin-top:1.5rem;color:var(--bois-clair);"></p>
+  </div>
+
+  <!-- ÉCRAN DE JEU (caché au départ) -->
+  <div id="ecran-jeu" class="jeu-container" style="display:none;">
+
+    <!-- Joueur 2 (NORD = adversaire si on est joueur 0) -->
+    <div class="joueur-info" id="info-j2">
+      <div>
+        <div class="nom" id="nom-j2">Adversaire</div>
+        <div class="score-label">Graines capturées</div>
+      </div>
+      <div class="score-val" id="score-j2">0</div>
+    </div>
+
+    <!-- Plateau -->
+    <div class="tablier">
+      <div class="numeros" id="nums-nord"></div>
+      <div class="rangee"  id="rangee-nord"></div>
+      <div class="separateur"></div>
+      <div class="rangee"  id="rangee-sud"></div>
+      <div class="numeros" id="nums-sud"></div>
+    </div>
+
+    <!-- Statut -->
+    <div class="statut">
+      <div class="tour" id="tour-texte">En attente...</div>
+      <div class="info" id="info-texte"></div>
+    </div>
+
+    <!-- Moi (SUD) -->
+    <div class="joueur-info" id="info-j1">
+      <div>
+        <div class="nom" id="nom-j1">Moi</div>
+        <div class="score-label">Graines capturées</div>
+      </div>
+      <div class="score-val" id="score-j1">0</div>
+    </div>
+
+  </div>
+
+  <!-- Overlay fin de partie -->
+  <div class="fin-partie" id="fin-partie" style="display:none;">
+    <div class="fin-carte">
+      <h2 id="fin-titre">Fin de partie</h2>
+      <p id="fin-scores"></p>
+      <a href="online.html" class="btn">Rejouer</a>
+      <a href="index.html" class="btn">Accueil</a>
+    </div>
+  </div>
+
+  <script src="js/songo.js"></script>
+  <script src="js/online.js"></script>
+
+</body>
+</html>

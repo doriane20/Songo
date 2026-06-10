@@ -1,0 +1,357 @@
+/* ============================================================
+   STYLE GLOBAL - SONGO
+   Thème : bois, textures naturelles, ambiance africaine
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+/* --- Variables --- */
+:root {
+  --bois-clair:   #c8a96e;
+  --bois-moyen:   #a0743a;
+  --bois-fonce:   #6b4423;
+  --bois-tres-fonce: #3e2208;
+  --graine-color: #2d1a0e;
+  --graine-lustre: #5a3820;
+  --or:           #d4a017;
+  --texte-clair:  #f5e6c8;
+  --texte-fonce:  #2a1505;
+  --ombre:        rgba(0,0,0,0.45);
+}
+
+/* --- Reset & base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #1a0e05;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 41px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.015) 40px,
+      rgba(255,255,255,0.015) 41px
+    );
+  color: var(--texte-clair);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   PAGE D'ACCUEIL
+   ============================================================ */
+
+.accueil {
+  text-align: center;
+  padding: 2rem;
+}
+
+.accueil h1 {
+  font-size: 3.5rem;
+  color: var(--or);
+  text-shadow: 0 2px 8px var(--ombre);
+  margin-bottom: 0.3rem;
+}
+
+.accueil .sous-titre {
+  font-size: 1rem;
+  color: var(--bois-clair);
+  margin-bottom: 3rem;
+  font-style: italic;
+  letter-spacing: 3px;
+}
+
+.boutons-mode {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.carte-mode {
+  background: linear-gradient(145deg, var(--bois-moyen), var(--bois-fonce));
+  border: 2px solid var(--bois-clair);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 220px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--texte-clair);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 20px var(--ombre);
+}
+
+.carte-mode:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px var(--ombre);
+  border-color: var(--or);
+}
+
+.carte-mode .icone { font-size: 2.8rem; margin-bottom: 1rem; }
+.carte-mode h2    { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--or); }
+.carte-mode p     { font-size: 0.85rem; color: var(--bois-clair); line-height: 1.4; }
+
+/* ============================================================
+   PLATEAU DE JEU
+   ============================================================ */
+
+.jeu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 780px;
+}
+
+/* Bandeau joueur */
+.joueur-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(90deg, var(--bois-tres-fonce), var(--bois-fonce));
+  border: 1px solid var(--bois-moyen);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+}
+
+.joueur-info .nom {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--texte-clair);
+}
+
+.joueur-info .score-label { font-size: 0.8rem; color: var(--bois-clair); }
+
+.joueur-info .score-val {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--or);
+}
+
+.joueur-info.actif {
+  border-color: var(--or);
+  box-shadow: 0 0 12px rgba(212,160,23,0.4);
+}
+
+/* Le plateau (tablier) */
+.tablier {
+  background: linear-gradient(160deg, var(--bois-clair), var(--bois-moyen), var(--bois-fonce));
+  border-radius: 24px;
+  border: 4px solid var(--bois-tres-fonce);
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.15),
+    0 10px 40px var(--ombre);
+  padding: 1.2rem 1.5rem;
+  width: 100%;
+}
+
+/* Rangée de cases */
+.rangee {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0.5rem 0;
+}
+
+/* Numéros des cases */
+.numeros {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0.2rem 0;
+}
+
+.numeros span {
+  width: 70px;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--bois-tres-fonce);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Séparateur central */
+.separateur {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--bois-tres-fonce), transparent);
+  margin: 0.4rem 1rem;
+  border-radius: 2px;
+}
+
+/* Case individuelle */
+.case {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8b5e2a, #4a2c0a);
+  border: 3px solid var(--bois-tres-fonce);
+  box-shadow:
+    inset 0 3px 8px rgba(0,0,0,0.5),
+    inset 0 -1px 3px rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.case:hover:not(.vide):not(.disabled) {
+  transform: scale(1.08);
+  box-shadow:
+    inset 0 3px 8px rgba(0,0,0,0.5),
+    0 0 14px rgba(212,160,23,0.6);
+  border-color: var(--or);
+}
+
+.case.vide { cursor: default; opacity: 0.5; }
+.case.disabled { cursor: not-allowed; }
+
+.case.selectionnee {
+  border-color: var(--or);
+  box-shadow:
+    inset 0 3px 8px rgba(0,0,0,0.5),
+    0 0 18px rgba(212,160,23,0.8);
+}
+
+/* Compteur de graines dans la case */
+.case .nb-graines {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--texte-clair);
+  text-shadow: 0 1px 3px #000;
+  z-index: 1;
+}
+
+/* ============================================================
+   MESSAGES & STATUT
+   ============================================================ */
+
+.statut {
+  background: linear-gradient(90deg, var(--bois-tres-fonce), var(--bois-fonce));
+  border: 1px solid var(--bois-moyen);
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  text-align: center;
+  min-width: 300px;
+}
+
+.statut .tour {
+  font-family: 'Cinzel', serif;
+  color: var(--or);
+  font-size: 1rem;
+}
+
+.statut .info {
+  font-size: 0.85rem;
+  color: var(--bois-clair);
+  margin-top: 0.2rem;
+}
+
+/* Message de fin */
+.fin-partie {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.fin-carte {
+  background: linear-gradient(145deg, var(--bois-moyen), var(--bois-fonce));
+  border: 3px solid var(--or);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  animation: apparition 0.4s ease;
+}
+
+.fin-carte h2 { font-size: 2rem; color: var(--or); margin-bottom: 1rem; }
+.fin-carte p  { color: var(--texte-clair); margin-bottom: 0.4rem; }
+
+@keyframes apparition {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+
+.btn {
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(145deg, var(--bois-moyen), var(--bois-fonce));
+  border: 2px solid var(--bois-clair);
+  color: var(--texte-clair);
+  padding: 0.7rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, var(--bois-clair), var(--bois-moyen));
+  color: var(--texte-fonce);
+  border-color: var(--or);
+}
+
+.btn-retour {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .case { width: 42px; height: 42px; }
+  .case .nb-graines { font-size: 1rem; }
+  .numeros span { width: 42px; }
+  .accueil h1 { font-size: 2.2rem; }
+  .boutons-mode { flex-direction: column; align-items: center; }
+}
+.credit {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--bois-clair);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  border-top: 1px solid var(--bois-moyen);
+  padding-top: 1rem;
+}
+
+.credit strong {
+  color: var(--or);
+  font-size: 1rem;
+}

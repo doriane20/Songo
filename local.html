@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Songo – Local</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <a href="index.html" class="btn btn-retour">← Accueil</a>
+
+  <div class="jeu-container">
+
+    <!-- Joueur 2 (NORD) -->
+    <div class="joueur-info" id="info-j2">
+      <div>
+        <div class="nom">Joueur 2</div>
+        <div class="score-label">Graines capturées</div>
+      </div>
+      <div class="score-val" id="score-j2">0</div>
+    </div>
+
+    <!-- Plateau -->
+    <div class="tablier">
+
+      <!-- Numéros rangée Nord (inversés : 7 à 1) -->
+      <div class="numeros" id="nums-nord"></div>
+
+      <!-- Rangée Joueur 2 (NORD) -->
+      <div class="rangee" id="rangee-nord"></div>
+
+      <div class="separateur"></div>
+
+      <!-- Rangée Joueur 1 (SUD) -->
+      <div class="rangee" id="rangee-sud"></div>
+
+      <!-- Numéros rangée Sud (1 à 7) -->
+      <div class="numeros" id="nums-sud"></div>
+
+    </div>
+
+    <!-- Statut -->
+    <div class="statut">
+      <div class="tour" id="tour-texte">Tour du Joueur 1</div>
+      <div class="info" id="info-texte">Choisissez une case à semer</div>
+    </div>
+
+    <!-- Joueur 1 (SUD) -->
+    <div class="joueur-info" id="info-j1">
+      <div>
+        <div class="nom">Joueur 1</div>
+        <div class="score-label">Graines capturées</div>
+      </div>
+      <div class="score-val" id="score-j1">0</div>
+    </div>
+
+  </div>
+
+  <!-- Overlay fin de partie -->
+  <div class="fin-partie" id="fin-partie" style="display:none;">
+    <div class="fin-carte">
+      <h2 id="fin-titre">Fin de partie</h2>
+      <p id="fin-scores"></p>
+      <button class="btn" onclick="rejouer()">Rejouer</button>
+      <a href="index.html" class="btn">Accueil</a>
+    </div>
+  </div>
+
+  <script src="js/songo.js"></script>
+  <script src="js/local.js"></script>
+
+</body>
+</html>
