@@ -2,7 +2,7 @@
 //  ONLINE.JS  –  Version en ligne avec AJAX polling
 // ============================================================
 
-const SERVER = 'http://localhost:8000/server/server.php';
+const SERVER = 'https://songo-1kju.onrender.com/api';
 
 let gameId   = null;
 let mySide   = null;   // 0 ou 1
