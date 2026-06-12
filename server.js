@@ -13,13 +13,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 
 // Lecture/écriture
+let partiesMemoire = {};
+
 function lireParties() {
-  if (!fs.existsSync(FICHIER)) return {};
-  const contenu = fs.readFileSync(FICHIER, 'utf8');
-  return contenu ? JSON.parse(contenu) : {};
+  return partiesMemoire;
 }
 function sauvegarder(parties) {
-  fs.writeFileSync(FICHIER, JSON.stringify(parties, null, 2));
+  partiesMemoire = parties;
+}
 }
 
 // CREATE
